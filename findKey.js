@@ -8,16 +8,30 @@ const assertEqual = function (actual, expected) {
 
 const findKey = function (obj, callback) {
   const v = Object.values(obj);
-  // console.log(k);
-  let output = v.filter((element) => element.stars === 2);
-  // console.log(output);
-  for (let k of output) {
-    console.log(k);
-    if (k === callback[k]) {
-      // console.log(k);
+  // returns an array of object of the values i.e. [{ stars: 1 },...]
+  // console.log(v[0]);
+
+  for (let i = 0; i < v.length; i++) {
+    // console.log(v[i]);
+    if (obj[i] === callback[key]) {
+      console.log(callback(key, i));
     }
   }
 };
+
+console.log(
+  findKey(
+    {
+      "Blue Hill": { stars: 1 },
+      Akaleri: { stars: 3 },
+      noma: { stars: 2 },
+      elBulli: { stars: 3 },
+      Ora: { stars: 2 },
+      Akelarre: { stars: 3 },
+    },
+    (x) => x.stars === 2
+  )
+);
 
 assertEqual(
   findKey(
