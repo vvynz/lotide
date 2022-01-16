@@ -19,32 +19,13 @@ const findKey = function (obj, callback) {
   // }
 
   for (let key in obj) {
-    if (!obj.hasOwnProperty(key)) {
-      return undefined;
-    }
-
-    if (obj.hasOwnProperty(key)) {
-      console.log(obj[key]);
-      if (obj[key] === callback[key]) {
-        console.log(callback[key]);
-      }
+    // callback here is to determine whether the key of the object is true
+    if (callback(obj[key])) {
+      console.log(callback(obj[key]));
+      return key;
     }
   }
 };
-
-// console.log(
-//   findKey(
-//     {
-//       "Blue Hill": { stars: 1 },
-//       Akaleri: { stars: 3 },
-//       noma: { stars: 2 },
-//       elBulli: { stars: 3 },
-//       Ora: { stars: 2 },
-//       Akelarre: { stars: 3 },
-//     },
-//     (x) => x.stars === 2
-//   )
-// );
 
 assertEqual(
   findKey(
@@ -61,4 +42,17 @@ assertEqual(
   "noma"
 );
 
-//assertEqual();
+assertEqual(
+  findKey(
+    {
+      "Blue Hill": { stars: 1 },
+      Akaleri: { stars: 3 },
+      noma: { stars: 2 },
+      elBulli: { stars: 3 },
+      Ora: { stars: 2 },
+      Akelarre: { stars: 3 },
+    },
+    (x) => x.stars === 4
+  ),
+  undefined
+);
