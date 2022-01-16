@@ -7,19 +7,17 @@ const assertEqual = function (actual, expected) {
 };
 
 const findKey = function (obj, callback) {
-  const objKeys = Object.keys(obj);
-  console.log(objKeys);
-  for (const prop in obj) {
-    console.log(obj[prop]);
-    if (objKeys[prop] !== callback[prop]) {
-      return undefined;
-    }
+  const v = Object.values(obj);
+  //console.log(v);
 
-    if (objKeys[prop] === callback[prop]) {
-      console.log(callback[prop]);
-      return [prop];
+  // const result = [];
+  v.forEach((el) => {
+    if (callback(el) === true) {
+      console.log(callback(el));
+      return callback(el);
     }
-  }
+  });
+  return;
 };
 
 assertEqual(
@@ -34,7 +32,7 @@ assertEqual(
     },
     (x) => x.stars === 2
   ),
-  "noma"
+  true
 );
 
 //assertEqual();
