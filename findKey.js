@@ -8,16 +8,15 @@ const assertEqual = function (actual, expected) {
 
 const findKey = function (obj, callback) {
   const v = Object.values(obj);
-  //console.log(v);
-
-  // const result = [];
-  v.forEach((el) => {
-    if (callback(el) === true) {
-      console.log(callback(el));
-      return callback(el);
+  // console.log(k);
+  let output = v.filter((element) => element.stars === 2);
+  // console.log(output);
+  for (let k of output) {
+    console.log(k);
+    if (k === callback[k]) {
+      // console.log(k);
     }
-  });
-  return;
+  }
 };
 
 assertEqual(
@@ -32,7 +31,7 @@ assertEqual(
     },
     (x) => x.stars === 2
   ),
-  true
+  "noma"
 );
 
 //assertEqual();
