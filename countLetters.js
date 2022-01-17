@@ -15,3 +15,5 @@ const countLetters = function (strMessage) {
 };
 
 countLetters("lighthouse in the house");
+
+module.exports = countLetters;

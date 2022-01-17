@@ -56,3 +56,5 @@ assertArraysEqual(
 );
 assertArraysEqual(eqArrays(takeUntil(data1, results1), [1, 2, 5, 7, 2]), false);
 assertArraysEqual(eqArrays(takeUntil(age, results3), [93, 42, 20, 69]), false);
+
+module.exports = takeUntil;

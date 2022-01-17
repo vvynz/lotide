@@ -88,3 +88,5 @@ assertEqual(
   ),
   "20"
 );
+
+module.exports = findKey;

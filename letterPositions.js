@@ -40,15 +40,4 @@ const letterPositions = function (sentence) {
 //assertArraysEqual(letterPositions("hello").e, [1]);
 letterPositions("hello");
 
-//const a = "hello";
-//console.log(a[0]);
-/* if (results[label] === sentence[label]) {
-      results[label] = 0;
-      if (value[label] === sentence[label]) {
-        value.push(sentence.indexOf(label));
-      }
-
-      //if (value[label] === results[label]) {
-      // results[label] = value;
-      //}
-    } */
+module.exports = letterPositions;

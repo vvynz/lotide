@@ -35,3 +35,5 @@ without(["MYG", "JHS", "PJM"], ["PJM"]);
 // without(words, ["lighthouse"]);
 // assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 // without([1, 2, 3], [1]);
+
+module.exports = without;

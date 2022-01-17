@@ -37,3 +37,5 @@ assertArraysEqual(
   eqArrays(map(words, results1), ["g", "c", "t", "m", "t"]),
   true
 );
+
+module.exports = map;
